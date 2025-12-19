@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Certs - Utkarsha Subedi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="certs">
+  <div class="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-square">
+      <span class="arm arm-1"></span>
+      <span class="arm arm-2"></span>
+      <span class="arm arm-3"></span>
+      <span class="arm arm-4"></span>
+    </div>
+  </div>
+
+  <main>
+    <header class="top-bar">
+      <button class="terminal-btn" id="terminal-btn" aria-label="Open terminal">
+        <span class="terminal-icon">&gt;_</span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home<span class="nav-dot"></span></a></li>
+          <li><a href="about.html" class="nav-link">About<span class="nav-dot"></span></a></li>
+          <li><a href="projects.html" class="nav-link">Projects<span class="nav-dot"></span></a></li>
+          <li><a href="certs.html" class="nav-link">Certs<span class="nav-dot"></span></a></li>
+          <li><a href="blogs.html" class="nav-link">Blogs<span class="nav-dot"></span></a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+    </header>
+
+    <section class="content-page certs-page">
+      <h1 id="certs-title" data-value="Certifications">Certifications</h1>
+      <p>Professional certifications and training that demonstrate my commitment to cybersecurity excellence and continuous learning.</p>
+
+      <div class="certifications-list">
+        <article class="certification-card">
+          <header class="certification-header">
+            <div class="certification-info">
+              <div class="certification-icon">
+                <img src="certs/acp.svg" alt="APIsec Logo" loading="lazy">
+              </div>
+              <div>
+                <h3>APIsec Certified Practitioner</h3>
+                <p class="certification-meta">APISec University</p>
+              </div>
+            </div>
+            <span class="certification-dates">Aug 19, 2025</span>
+          </header>
+          <p>Completed hands-on training in API security testing with a focus on the OWASP API Top 10. The certification covered identifying common API weaknesses, testing authentication and authorization flows, and reviewing REST API behavior in practical scenarios. This strengthened my ability to evaluate API security posture and perform structured security testing on web services.</p>
+        </article>
+
+        <article class="certification-card">
+          <header class="certification-header">
+            <div class="certification-info">
+              <div class="certification-icon">
+                <img src="certs/mastermind.svg" alt="ISO/IEC 27001 Logo" loading="lazy">
+              </div>
+              <div>
+                <h3>ISO/IEC 27001:2022 Lead Auditor</h3>
+                <p class="certification-meta">Mastermind Assurance</p>
+              </div>
+            </div>
+            <span class="certification-dates">March 2025</span>
+          </header>
+          <p>Completed formal training on the ISO/IEC 27001:2022 standard with a focus on Information Security Management Systems. The course covered planning, conducting, and reporting ISMS audits, along with evaluating controls, risks, and compliance against international audit requirements.</p>
+        </article>
+
+        <article class="certification-card">
+          <header class="certification-header">
+            <div class="certification-info">
+              <div class="certification-icon">
+                <img src="certs/cyber.svg" alt="Certified Cyber Security Analyst Logo" loading="lazy">
+              </div>
+              <div>
+                <h3>Certified Cyber Security Analyst</h3>
+                <p class="certification-meta">CyberWarFare Labs</p>
+              </div>
+            </div>
+            <span class="certification-dates">April 2025</span>
+          </header>
+          <p>Completed hands-on training focused on threat identification, incident response, and vulnerability discovery. The program emphasized practical security scenarios and simulations, strengthening skills in analyzing security events and responding to real-world cyber threats.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Terminal Modal -->
+  <div class="terminal-overlay" id="terminal-overlay">
+    <div class="terminal-window">
+      <div class="terminal-body" id="terminal-body">
+        <div class="terminal-output" id="terminal-output">
+          <div class="terminal-line terminal-welcome">Welcome to Utkarsha's Portfolio Terminal</div>
+          <div class="terminal-line terminal-welcome">Type <span class="cmd-highlight">help</span> for available commands</div>
+          <div class="terminal-line terminal-welcome terminal-info">Press <span class="cmd-highlight">Esc</span> to close</div>
+          <div class="terminal-line">&nbsp;</div>
+        </div>
+        <div class="terminal-input-line">
+          <span class="terminal-prompt">visitor@portfolio:~$</span>
+          <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" autofocus>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer site-footer--center">
+    <div class="footer-inner footer-inner--center">
+      <span class="footer-label">Let's Connect</span>
+      <a href="https://www.linkedin.com/in/utkarsha-subedi/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="mailto:utkarsha.subedi@gmail.com">Email</a>
+      <a href="https://github.com/UtkarshaSubedi" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Security | Utkarsha Subedi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="home">
+  <div class="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-square">
+      <span class="arm arm-1"></span>
+      <span class="arm arm-2"></span>
+      <span class="arm arm-3"></span>
+      <span class="arm arm-4"></span>
+    </div>
+  </div>
+
+  <main>
+    <header class="top-bar">
+      <button class="terminal-btn" id="terminal-btn" aria-label="Open terminal">
+        <span class="terminal-icon">&gt;_</span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home<span class="nav-dot"></span></a></li>
+          <li><a href="about.html" class="nav-link">About<span class="nav-dot"></span></a></li>
+          <li><a href="projects.html" class="nav-link">Projects<span class="nav-dot"></span></a></li>
+          <li><a href="certs.html" class="nav-link">Certs<span class="nav-dot"></span></a></li>
+          <li><a href="blogs.html" class="nav-link">Blogs<span class="nav-dot"></span></a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+    </header>
+
+    <section class="hero">
+      <div class="hero-name-wrapper">
+        <h1 class="hero-name" id="hero-name" data-value="UTKARSHA SUBEDI">UTKARSHA SUBEDI</h1>
+        <p class="hero-subline">
+          <span class="prompt">&gt;</span>
+          <span id="hero-tagline-text">Cyber Security Undergraduate</span>
+        </p>
+      </div>
+      <button class="terminal-hint" id="terminal-hint-btn">
+        <span class="hint-bracket hint-tl"></span>
+        <span class="hint-bracket hint-tr"></span>
+        <span class="hint-bracket hint-bl"></span>
+        <span class="hint-bracket hint-br"></span>
+        Press <kbd>Ctrl</kbd><span class="kbd-plus">+</span><kbd>M</kbd> for terminal <span class="hint-arrow">→</span>
+      </button>
+    </section>
+  </main>
+
+  <!-- Terminal Modal -->
+  <div class="terminal-overlay" id="terminal-overlay">
+    <div class="terminal-window">
+      <div class="terminal-body" id="terminal-body">
+        <div class="terminal-output" id="terminal-output">
+          <div class="terminal-line terminal-welcome">Welcome to Utkarsha's Portfolio Terminal</div>
+          <div class="terminal-line terminal-welcome">Type <span class="cmd-highlight">help</span> for available commands</div>
+          <div class="terminal-line terminal-welcome terminal-info">Press <span class="cmd-highlight">Esc</span> to close</div>
+          <div class="terminal-line">&nbsp;</div>
+        </div>
+        <div class="terminal-input-line">
+          <span class="terminal-prompt">visitor@portfolio:~$</span>
+          <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" autofocus>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer site-footer--center">
+    <div class="footer-inner footer-inner--center">
+      <span class="footer-label">Let's Connect</span>
+      <a href="https://www.linkedin.com/in/utkarsha-subedi/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="mailto:utkarsha.subedi@gmail.com">Email</a>
+      <a href="https://github.com/UtkarshaSubedi" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
