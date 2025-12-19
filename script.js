@@ -138,7 +138,7 @@ const terminalCommands = {
   },
   
   // Whitelisted commands
-  whitelist: ["cd", "ls", "whoami", "resume", "help", "clear", "exit", "quit", "theme"],
+  whitelist: ["cd", "ls", "whoami", "help", "clear", "exit", "quit", "theme"],
   
   help: () => {
     return [
@@ -147,7 +147,6 @@ const terminalCommands = {
       "  <span class='cmd-highlight'>cd [page]</span>   Navigate to: about, projects, certs, blogs, home",
       "  <span class='cmd-highlight'>ls</span>          List available pages",
       "  <span class='cmd-highlight'>whoami</span>      Display portfolio owner info",
-      "  <span class='cmd-highlight'>resume</span>      Download resume PDF",
       "  <span class='cmd-highlight'>theme</span>       Toggle light/dark mode",
       "  <span class='cmd-highlight'>clear</span>       Clear the terminal",
       "  <span class='cmd-highlight'>exit</span>        Close the terminal"
@@ -174,18 +173,7 @@ const terminalCommands = {
   },
   
 
-  resume: () => {
-    // Trigger resume download
-    const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'Utkarsha_Subedi_Resume.pdf';
-    link.click();
-    return [
-      "Downloading resume...",
-      "File: Utkarsha_Subedi_Resume.pdf"
-    ];
-  }
-};
+}
 
 function initTerminal() {
   const overlay = document.getElementById("terminal-overlay");
@@ -349,13 +337,6 @@ function initTerminal() {
         break;
         
 
-      case "resume":
-        if (args.length > 0) {
-          addOutput([`resume: no arguments allowed`], "terminal-error");
-        } else {
-          addOutput(terminalCommands.resume());
-        }
-        break;
 
       case "clear":
         if (args.length > 0) {
