@@ -138,7 +138,7 @@ const terminalCommands = {
   },
   
   // Whitelisted commands
-  whitelist: ["cd", "ls", "whoami", "help", "clear", "exit", "quit", "theme"],
+  whitelist: ["cd", "ls", "whoami", "social", "help", "clear", "exit", "quit", "theme"],
   
   help: () => {
     return [
@@ -147,6 +147,7 @@ const terminalCommands = {
       "  <span class='cmd-highlight'>cd [page]</span>   Navigate to: about, projects, certs, blogs, home",
       "  <span class='cmd-highlight'>ls</span>          List available pages",
       "  <span class='cmd-highlight'>whoami</span>      Display portfolio owner info",
+      "  <span class='cmd-highlight'>social</span>      Show social and contact links",
       "  <span class='cmd-highlight'>theme</span>       Toggle light/dark mode",
       "  <span class='cmd-highlight'>clear</span>       Clear the terminal",
       "  <span class='cmd-highlight'>exit</span>        Close the terminal"
@@ -172,7 +173,15 @@ const terminalCommands = {
     ];
   },
   
-
+  social: () => {
+    return [
+      "Social & contact:",
+      "",
+      "<span class='cmd-highlight'>LinkedIn</span>  → <a href='https://www.linkedin.com/in/utkarsha-subedi/' target='_blank' rel='noreferrer'>utkarsha-subedi</a>",
+      "<span class='cmd-highlight'>GitHub</span>   → <a href='https://github.com/UtkarshaSubedi' target='_blank' rel='noreferrer'>UtkarshaSubedi</a>",
+      "<span class='cmd-highlight'>Email</span>    → <a href='mailto:utkarsha.subedi@gmail.com'>utkarsha.subedi@gmail.com</a>"
+    ];
+  },
 }
 
 function initTerminal() {
@@ -335,7 +344,14 @@ function initTerminal() {
           addOutput(terminalCommands.whoami());
         }
         break;
-        
+
+      case "social":
+        if (args.length > 0) {
+          addOutput([`social: no arguments allowed`], "terminal-error");
+        } else {
+          addOutput(terminalCommands.social());
+        }
+        break;
 
 
       case "clear":
