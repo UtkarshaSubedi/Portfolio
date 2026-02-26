@@ -1,1 +1,1 @@
-"This is my portfolio. It is in its initial days and will undergo a lot of changes." 
+This repository hosts my personal portfolio, where I share projects, experiments, and technical work. It reflects my ongoing growth as a cybersecurity and technology professional and will continue to evolve over time.
