@@ -1413,6 +1413,8 @@ main {
   border-radius: 8px;
   padding: 24px;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .blog-card:hover {
@@ -1425,17 +1427,17 @@ main {
   margin-bottom: 16px;
 }
 
-.blog-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-  font-size: 13px;
+.blog-title-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  column-gap: 12px;
 }
 
 .blog-date {
   color: var(--muted);
   font-weight: 500;
+  font-size: 13px;
 }
 
 .blog-category {
@@ -1444,10 +1446,13 @@ main {
   padding: 4px 12px;
   border-radius: 12px;
   font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.blog-card h3 {
-  margin: 0 0 12px 0;
+.blog-title-row h3 {
+  margin: 0;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.4;
@@ -1475,15 +1480,24 @@ main {
   font-weight: 500;
 }
 
+.blog-footer {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
 .blog-link {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
   color: var(--text);
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   transition: all 0.3s ease;
+  padding-bottom: 2px;
 }
 
 .blog-link:hover {
@@ -1492,9 +1506,12 @@ main {
 
 .blog-link::after {
   content: "";
-  width: 0;
   height: 1px;
   background-color: var(--text);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
   transition: width 0.3s ease;
 }
 
