@@ -107,9 +107,17 @@ function initTheme() {
 function toggleTheme() {
   const currentTheme = document.documentElement.getAttribute("data-theme");
   const newTheme = currentTheme === "dark" ? "light" : "dark";
-  
+
+  document.documentElement.classList.remove("theme-switching");
+  void document.documentElement.offsetWidth;
   document.documentElement.setAttribute("data-theme", newTheme);
+  document.documentElement.classList.add("theme-switching");
   localStorage.setItem("theme", newTheme);
+
+  window.clearTimeout(toggleTheme.animationTimeout);
+  toggleTheme.animationTimeout = window.setTimeout(() => {
+    document.documentElement.classList.remove("theme-switching");
+  }, 650);
 }
 
 // Initialize theme before DOM loads to prevent flash
@@ -138,7 +146,7 @@ const terminalCommands = {
   },
   
   // Whitelisted commands
-  whitelist: ["cd", "ls", "whoami", "social", "help", "clear", "exit", "quit", "theme"],
+  whitelist: ["cd", "ls", "whoami", "social", "sudo", "help", "clear", "exit", "quit", "theme"],
   
   help: () => {
     return [
@@ -148,6 +156,7 @@ const terminalCommands = {
       "  <span class='cmd-highlight'>ls</span>          List available pages",
       "  <span class='cmd-highlight'>whoami</span>      Display portfolio owner info",
       "  <span class='cmd-highlight'>social</span>      Show social and contact links",
+      "  <span class='cmd-highlight'>sudo hire-me</span> Play a recruiter-friendly easter egg",
       "  <span class='cmd-highlight'>theme</span>       Toggle light/dark mode",
       "  <span class='cmd-highlight'>clear</span>       Clear the terminal",
       "  <span class='cmd-highlight'>exit</span>        Close the terminal"
@@ -180,6 +189,18 @@ const terminalCommands = {
       "<span class='cmd-highlight'>LinkedIn</span>  → <a href='https://www.linkedin.com/in/utkarsha-subedi/' target='_blank' rel='noreferrer'>utkarsha-subedi</a>",
       "<span class='cmd-highlight'>GitHub</span>   → <a href='https://github.com/UtkarshaSubedi' target='_blank' rel='noreferrer'>UtkarshaSubedi</a>",
       "<span class='cmd-highlight'>Email</span>    → <a href='mailto:utkarsha.subedi@gmail.com'>utkarsha.subedi@gmail.com</a>"
+    ];
+  },
+
+  hireMe: () => {
+    return [
+      "Access elevated.",
+      "Candidate profile loaded: cybersecurity graduate, First Class Honors, practical experience in VAPT, API security, and secure systems thinking.",
+      "Ready to contribute, learn fast, and help strengthen real-world defenses.",
+      "",
+      "<span class='cmd-highlight'>LinkedIn</span>  -> <a href='https://www.linkedin.com/in/utkarsha-subedi/' target='_blank' rel='noreferrer'>utkarsha-subedi</a>",
+      "<span class='cmd-highlight'>GitHub</span>   -> <a href='https://github.com/UtkarshaSubedi' target='_blank' rel='noreferrer'>UtkarshaSubedi</a>",
+      "<span class='cmd-highlight'>Email</span>    -> <a href='mailto:utkarsha.subedi@gmail.com'>utkarsha.subedi@gmail.com</a>"
     ];
   },
 }
@@ -350,6 +371,17 @@ function initTerminal() {
           addOutput([`social: no arguments allowed`], "terminal-error");
         } else {
           addOutput(terminalCommands.social());
+        }
+        break;
+
+      case "sudo":
+        if (args.length === 1 && args[0] === "hire-me") {
+          addOutput(terminalCommands.hireMe(), "terminal-success");
+        } else if (args.length === 0) {
+          addOutput(["sudo: missing command"], "terminal-error");
+          addOutput(["Try: sudo hire-me"], "terminal-info");
+        } else {
+          addOutput([`sudo: ${escapeHtml(args.join(" "))}: permission denied`], "terminal-error");
         }
         break;
 
