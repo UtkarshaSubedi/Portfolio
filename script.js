@@ -176,7 +176,7 @@ const terminalCommands = {
   whoami: () => {
     return [
       "Utkarsha Subedi",
-      "Cyber Security Undergraduate",
+      "Cybersecurity Graduate",
       "",
       "Passionate about security, coding, and building cool stuff."
     ];
